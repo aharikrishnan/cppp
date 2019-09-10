@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { BidBasicDetailsComponent } from '../bid-basic-details/bid-basic-details.component';
+import { Activity } from '../activity';
 
 @Component({
   selector: 'wizard',
@@ -8,31 +10,14 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 })
 
 export class WizardComponent implements OnInit {
-  firstFormGroup: FormGroup;
-  secondFormGroup: FormGroup;
+  activities: Activity[];
 
   constructor(private _formBuilder: FormBuilder) {}
 
   ngOnInit() {
-    this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: ['', Validators.required]
-    });
-    this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required]
-    });
-    this.thirdFormGroup = this._formBuilder.group({
-      thirdCtrl: ['', Validators.required]
-    });
-    this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required]
-    });
-    this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required]
-    });
-    this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required]
-    });
-    console.log(this.firstFormGroup)
+    this.activities = [
+      new Activity(BidBasicDetailsComponent, {name: 'Bid Basic Details'})
+    ];
   }
 }
 

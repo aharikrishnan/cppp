@@ -14,6 +14,7 @@ import {WizardComponent} from './app/wizard/wizard.component';
 
 import {TemplateEditorComponent} from './app/template-editor/template-editor.component';
 import { RuntimeContentComponent } from './app/runtime-content/runtime-content.component';
+import { BidBasicDetailsComponent } from './app/bid-basic-details/bid-basic-details.component';
 
 @NgModule({
   imports: [
@@ -31,7 +32,8 @@ import { RuntimeContentComponent } from './app/runtime-content/runtime-content.c
   declarations: [
     WizardComponent,
     TemplateEditorComponent,
-    RuntimeContentComponent
+    RuntimeContentComponent,
+    BidBasicDetailsComponent
   ],
   bootstrap: [WizardComponent],
   providers: []
