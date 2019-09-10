@@ -1,0 +1,90 @@
+<mat-horizontal-stepper id="wizard" labelPosition="bottom">
+    <mat-step [stepControl]="firstFormGroup">
+        <ng-template matStepLabel>Bid Basic details</ng-template>
+        <form [formGroup]="firstFormGroup">
+            <app-template-editor></app-template-editor>
+            <div>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+
+    <mat-step [stepControl]="secondFormGroup" optional>
+        <ng-template matStepLabel>Notice Inviting Tender</ng-template>
+        <form [formGroup]="secondFormGroup">
+            <mat-form-field>
+                <input matInput placeholder="Address" formControlName="secondCtrl" required>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+
+    <mat-step [stepControl]="thirdFormGroup" optional>
+        <ng-template matStepLabel>Instruction to Bidders</ng-template>
+        <form [formGroup]="thirdFormGroup">
+            <mat-form-field>
+                <input matInput placeholder="Address" formControlName="thirdCtrl" required>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    
+    <mat-step [stepControl]="fourthFormGroup" optional>
+        <ng-template matStepLabel>Bid Schedule</ng-template>
+        <form [formGroup]="fourthFormGroup">
+            <mat-form-field>
+                <input matInput placeholder="Address" formControlName="fourthCtrl" required>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    
+    <mat-step [stepControl]="fifthFormGroup" optional>
+        <ng-template matStepLabel>Pre Qualification Criterion</ng-template>
+        <form [formGroup]="fifthFormGroup">
+            <mat-form-field>
+                <input matInput placeholder="Address" formControlName="fifthCtrl" required>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+
+    <mat-step [stepControl]="sixthFormGroup" optional>
+        <ng-template matStepLabel>Specifications</ng-template>
+        <form [formGroup]="sixthFormGroup">
+            <mat-form-field>
+                <input matInput placeholder="Address" formControlName="sixthCtrl" required>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+
+    <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        You are now done.
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+        </div>
+    </mat-step>
+</mat-horizontal-stepper>
+
+
+<!-- Copyright 2019 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->

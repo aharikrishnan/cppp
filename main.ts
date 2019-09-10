@@ -9,10 +9,11 @@ import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {DemoMaterialModule} from './material-module';
 
-import {StepperLabelPositionBottomExample} from './app/stepper-label-position-bottom-example';
+// import {StepperLabelPositionBottomExample} from './app/stepper-label-position-bottom-example';
+import {WizardComponent} from './app/wizard/wizard.component';
 
 import {TemplateEditorComponent} from './app/template-editor/template-editor.component';
-import { RuntimeContentComponent, RuntimeTemplateComponent } from './app/runtime-content/runtime-content.component';
+import { RuntimeContentComponent } from './app/runtime-content/runtime-content.component';
 
 @NgModule({
   imports: [
@@ -25,16 +26,14 @@ import { RuntimeContentComponent, RuntimeTemplateComponent } from './app/runtime
     ReactiveFormsModule
   ],
   entryComponents: [
-    StepperLabelPositionBottomExample,
-    RuntimeTemplateComponent
+    WizardComponent
   ],
   declarations: [
-    StepperLabelPositionBottomExample,
+    WizardComponent,
     TemplateEditorComponent,
-    RuntimeContentComponent,
-    RuntimeTemplateComponent
+    RuntimeContentComponent
   ],
-  bootstrap: [StepperLabelPositionBottomExample],
+  bootstrap: [WizardComponent],
   providers: []
 })
 export class AppModule {}

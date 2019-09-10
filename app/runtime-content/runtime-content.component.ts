@@ -8,23 +8,6 @@ import {
 import { CommonModule } from '@angular/common';
 
 @Component({
-  template: `
-    <div class="hero-profile">
-      <h3>Featured Hero Profile</h3>
-      <h4>{{data.name}}</h4>
-
-      <p>{{data.bio}}</p>
-
-      <strong>Hire this hero today!</strong>
-    </div>
-  `
-})
-
-export class RuntimeTemplateComponent {
-  @Input() data: any;
-}
-
-@Component({
     selector: 'runtime-content',
     template: `
         <div>
@@ -53,17 +36,7 @@ export class RuntimeContentComponent {
         private componentFactoryResolver: ComponentFactoryResolver,
         private compiler: Compiler) {
     }
-
-    loadComponent() {
-      const componentFactory = this.componentFactoryResolver.resolveComponentFactory(RuntimeTemplateComponent);
-
-      const viewContainerRef = this.container;
-      viewContainerRef.clear();
-
-      const componentRef = viewContainerRef.createComponent(componentFactory);
-      componentRef.instance.data = {name: "Saint", bio: "keep turning the knobs until it sounds right .."};
-    }
-
+    
     compileTemplate() {
 
         let metadata = {
