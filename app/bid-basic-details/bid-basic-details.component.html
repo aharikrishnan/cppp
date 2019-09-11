@@ -4,13 +4,35 @@
  integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
 
 
- 
-<div class="container">
-  <div class="heading">
-    <h1>{{data.name}} <i class="material-icons info">info</i></h1>
-  </div>
-  <hr>
-  <div class="body">
+<!-- <mat-grid-list cols="2" rowHeight="2:1">
+  <mat-grid-tile rowspan="1" colspan="1">
+    <div>
+      <mat-label>Ministry : </mat-label><b>{{data.workable.ministry}}</b>
+    </div>
+    <div>
+      <mat-label>Department : </mat-label><b>{{data.workable.department}}</b>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile rowspan="1" colspan="1">2</mat-grid-tile>
+  <mat-grid-tile rowspan="1" colspan="2">3</mat-grid-tile>
+  <mat-grid-tile rowspan="1" colspan="1">4</mat-grid-tile>
+  <mat-grid-tile rowspan="1" colspan="1">5</mat-grid-tile>
+  <mat-grid-tile rowspan="1" colspan="1">6</mat-grid-tile>
+  <mat-grid-tile rowspan="1" colspan="2">7</mat-grid-tile>
+</mat-grid-list> -->
+
+
+
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>
+      <h2>{{data.name}} <i class="material-icons info">info</i></h2>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+      <div class="container">
+        <br>
     <div class="row">
       <div class="col-md-6 text-left">
         <span>Ministry : </span><b> {{data.workable.ministry}}</b>
@@ -97,4 +119,5 @@
       </mat-form-field>
     </div>
   </div>
-</div>
+  </mat-card-content>
+</mat-card>
