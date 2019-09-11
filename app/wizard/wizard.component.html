@@ -1,12 +1,14 @@
 <mat-horizontal-stepper #stepper id="wizard" labelPosition="bottom">
-  <mat-step [stepControl]="firstFormGroup" *ngFor="let activity of activities">
+  <mat-step [stepControl]="firstFormGroup" *ngFor="let activity of activities;let i = index">
     <ng-template matStepLabel>{{activity.data.name}}</ng-template>
     <form [formGroup]="firstFormGroup">
         <h3>{{activity.data.name}}</h3>
         <step [activity]="activity"></step>
         <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
+            <button mat-button matStepperPrevious *ngIf="i!=0">Back</button>
+            <div mat-dialog-actions align="end">
+              <button mat-button matStepperNext *ngIf="i!=(activities.length-1)">Next</button>
+            </div>            
         </div>
     </form>
   </mat-step>

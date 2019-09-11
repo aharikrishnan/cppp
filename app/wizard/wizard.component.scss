@@ -33,7 +33,7 @@
         width: 30px;
         height: 30px;
           background: #6666fa;
-        border: 2px solid #183573;
+        border: 2px solid #2524bd;
       }
 
       .mat-step-label{
@@ -50,4 +50,14 @@
   .mat-horizontal-content-container {
     padding-left: 300px;
   }
+  .mat-dialog-actions {
+    // ...
+    &[align='end'] {
+      justify-content: flex-end;
+    }
+
+    &[align='center'] {
+      justify-content: center;
+    }
+  }  
 }
