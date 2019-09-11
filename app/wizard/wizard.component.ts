@@ -1,10 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import { BidBasicDetailsComponent } from '../bid-basic-details/bid-basic-details.component';
-import { Activity } from '../activity';
 import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
-
-
+import { ApiService }         from '../api.service';
+import { Activity } from '../activity';
 
 @Component({
   selector: 'wizard',
@@ -21,17 +19,10 @@ export class WizardComponent implements OnInit {
 
   activities: Activity[];
 
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor(private _formBuilder: FormBuilder, private apiService: ApiService) {}
 
   ngOnInit() {
-    this.activities = [
-      new Activity(BidBasicDetailsComponent, {name: 'Bid Basic Details'}),
-      new Activity(BidBasicDetailsComponent, {name: 'Notice Inviting Tender'}),
-      new Activity(BidBasicDetailsComponent, {name: 'Instruction To Bidders'}),
-      new Activity(BidBasicDetailsComponent, {name: 'Bid Schedule'}),
-      new Activity(BidBasicDetailsComponent, {name: 'Pre Qualifications Criterion'}),
-      new Activity(BidBasicDetailsComponent, {name: 'Specifications'})
-    ];
+    this.activities = this.apiService.getActivities()
 
     this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ['', Validators.required]
@@ -39,7 +30,6 @@ export class WizardComponent implements OnInit {
   }
 
 }
-
 
 /**  Copyright 2019 Google Inc. All Rights Reserved.
     Use of this source code is governed by an MIT-style license that

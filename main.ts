@@ -17,6 +17,7 @@ import { RuntimeContentComponent } from './app/runtime-content/runtime-content.c
 import { BidBasicDetailsComponent } from './app/bid-basic-details/bid-basic-details.component';
 import { StepComponent } from './app/step/step.component';
 import { StepDirective } from './app/step.directive';
+import { ApiService } from './app/api.service';
 
 
 
@@ -43,7 +44,7 @@ import { StepDirective } from './app/step.directive';
     StepDirective
   ],
   bootstrap: [WizardComponent],
-  providers: []
+  providers: [ ApiService ]
 })
 export class AppModule {}
 

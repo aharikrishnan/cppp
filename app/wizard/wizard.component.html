@@ -5,9 +5,10 @@
         <h3>{{activity.data.name}}</h3>
         <step [activity]="activity"></step>
         <div>
-            <button mat-button matStepperPrevious *ngIf="i!=0">Back</button>
-            <div mat-dialog-actions align="end">
-              <button mat-button matStepperNext *ngIf="i!=(activities.length-1)">Next</button>
+
+            <div mat-dialog-actions>
+              <button mat-button matStepperPrevious *ngIf="i!=0">Back</button>
+              <button mat-button matStepperNext class="pull-right" *ngIf="i!=(activities.length-1)">Next</button>
             </div>            
         </div>
     </form>
