@@ -4,13 +4,13 @@ import { Activity } from '../activity';
 import { StepDirective } from '../step.directive';
 
 @Component({
-  selector: 'app-step',
+  selector: 'step',
   templateUrl: './step.component.html',
   styleUrls: ['./step.component.css']
 })
 export class StepComponent implements OnInit {
 
-  @Input() activities: Activity[];
+  @Input() activity: Activity;
   currentAdIndex = -1;
   @ViewChild(StepDirective, { static: true }) appStep: StepDirective;
   interval: any;
@@ -27,16 +27,13 @@ export class StepComponent implements OnInit {
   }
 
   loadComponent() {
-    this.currentAdIndex = (this.currentAdIndex + 1) % this.activities.length;
-    const activity = this.activities[this.currentAdIndex];
-
-    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(activity.component);
+    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(this.activity.component);
 
     const viewContainerRef = this.appStep.viewContainerRef;
     viewContainerRef.clear();
 
     const componentRef = viewContainerRef.createComponent(componentFactory);
-    (<ActivityComponent>componentRef.instance).data = activity.data;
+    (<ActivityComponent>componentRef.instance).data = this.activity.data;
   }
 
   getAds() {

@@ -1,6 +1,6 @@
 <mat-horizontal-stepper id="wizard" labelPosition="bottom">
     <mat-step [stepControl]="firstFormGroup" *ngFor="let activity of activities">
-        <ng-template {{tpl}}>Loading..</ng-template>
+      <step [activity]="activity"></step>
         
         <ng-template matStepLabel>Bid Basic details</ng-template>
         <form [formGroup]="firstFormGroup">
