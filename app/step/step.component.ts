@@ -11,8 +11,7 @@ import { StepDirective } from '../step.directive';
 export class StepComponent implements OnInit {
 
   @Input() activity: Activity;
-  currentAdIndex = -1;
-  @ViewChild(StepDirective, { static: true }) appStep: StepDirective;
+  @ViewChild(StepDirective, { static: true }) stepDirective: StepDirective;
   interval: any;
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver) { }
@@ -21,13 +20,9 @@ export class StepComponent implements OnInit {
     this.loadComponent();
   }
 
-  ngOnDestroy() {
-  }
-
   loadComponent() {
     const componentFactory = this.componentFactoryResolver.resolveComponentFactory(this.activity.component);
-
-    const viewContainerRef = this.appStep.viewContainerRef;
+    const viewContainerRef = this.stepDirective.viewContainerRef;
     viewContainerRef.clear();
 
     const componentRef = viewContainerRef.createComponent(componentFactory);

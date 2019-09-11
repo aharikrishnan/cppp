@@ -1,15 +1,12 @@
 <mat-horizontal-stepper id="wizard" labelPosition="bottom">
-    <mat-step [stepControl]="firstFormGroup" *ngFor="let activity of activities">
-      <step [activity]="activity"></step>
-        
-        <ng-template matStepLabel>Bid Basic details</ng-template>
-        <form [formGroup]="firstFormGroup">
-            <!-- <bid-basic-details></bid-basic-details> -->
-            <div>
-                <button mat-button matStepperNext>Next</button>
-            </div>
-        </form>
-    </mat-step>
-
-    
+  <mat-step [stepControl]="firstFormGroup" *ngFor="let activity of activities">
+    <ng-template matStepLabel>Bid Basic details</ng-template>
+    <form [formGroup]="firstFormGroup">
+        <step [activity]="activity"></step>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+        </div>
+    </form>
+  </mat-step>
 </mat-horizontal-stepper>
