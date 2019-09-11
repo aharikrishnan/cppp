@@ -2,12 +2,18 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { BidBasicDetailsComponent } from '../bid-basic-details/bid-basic-details.component';
 import { Activity } from '../activity';
+import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
+
+
 
 @Component({
   selector: 'wizard',
   templateUrl: './wizard.component.html',
   styleUrls: ['./wizard.component.scss'],
-  encapsulation: ViewEncapsulation.Native
+  encapsulation: ViewEncapsulation.None,
+  providers: [{
+    provide: STEPPER_GLOBAL_OPTIONS, useValue: {displayDefaultIndicatorType: false}
+  }]
 })
 
 export class WizardComponent implements OnInit {

@@ -1,4 +1,4 @@
-<mat-horizontal-stepper id="wizard" labelPosition="bottom">
+<mat-horizontal-stepper #stepper id="wizard" labelPosition="bottom">
   <mat-step [stepControl]="firstFormGroup" *ngFor="let activity of activities">
     <ng-template matStepLabel>{{activity.data.name}}</ng-template>
     <form [formGroup]="firstFormGroup">
@@ -10,4 +10,7 @@
         </div>
     </form>
   </mat-step>
+  <ng-template matStepperIcon="number">
+    <mat-icon>done_outline</mat-icon>
+  </ng-template>
 </mat-horizontal-stepper>
