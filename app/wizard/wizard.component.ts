@@ -10,6 +10,8 @@ import { Activity } from '../activity';
 })
 
 export class WizardComponent implements OnInit {
+  firstFormGroup: FormGroup;
+
   activities: Activity[];
 
   constructor(private _formBuilder: FormBuilder) {}
@@ -20,6 +22,10 @@ export class WizardComponent implements OnInit {
       new Activity(BidBasicDetailsComponent, {name: 'Bid Basic Details'}),
       new Activity(BidBasicDetailsComponent, {name: 'Bid Basic Details'})
     ];
+
+    this.firstFormGroup = this._formBuilder.group({
+      firstCtrl: ['', Validators.required]
+    });
   }
 
 }

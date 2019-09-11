@@ -19,11 +19,9 @@ export class StepComponent implements OnInit {
 
   ngOnInit() {
     this.loadComponent();
-    this.getAds();
   }
 
   ngOnDestroy() {
-    clearInterval(this.interval);
   }
 
   loadComponent() {
@@ -34,12 +32,6 @@ export class StepComponent implements OnInit {
 
     const componentRef = viewContainerRef.createComponent(componentFactory);
     (<ActivityComponent>componentRef.instance).data = this.activity.data;
-  }
-
-  getAds() {
-    this.interval = setInterval(() => {
-      this.loadComponent();
-    }, 3000);
   }
 
 }

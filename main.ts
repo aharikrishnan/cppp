@@ -15,6 +15,10 @@ import {WizardComponent} from './app/wizard/wizard.component';
 import {TemplateEditorComponent} from './app/template-editor/template-editor.component';
 import { RuntimeContentComponent } from './app/runtime-content/runtime-content.component';
 import { BidBasicDetailsComponent } from './app/bid-basic-details/bid-basic-details.component';
+import { StepComponent } from './app/step/step.component';
+import { StepDirective } from './app/step.directive';
+
+
 
 @NgModule({
   imports: [
@@ -27,13 +31,16 @@ import { BidBasicDetailsComponent } from './app/bid-basic-details/bid-basic-deta
     ReactiveFormsModule
   ],
   entryComponents: [
-    WizardComponent
+    WizardComponent,
+    BidBasicDetailsComponent
   ],
   declarations: [
     WizardComponent,
     TemplateEditorComponent,
     RuntimeContentComponent,
-    BidBasicDetailsComponent
+    BidBasicDetailsComponent,
+    StepComponent,
+    StepDirective
   ],
   bootstrap: [WizardComponent],
   providers: []
