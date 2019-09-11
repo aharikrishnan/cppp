@@ -1,7 +1,8 @@
 <mat-horizontal-stepper id="wizard" labelPosition="bottom">
   <mat-step [stepControl]="firstFormGroup" *ngFor="let activity of activities">
-    <ng-template matStepLabel>Bid Basic details</ng-template>
+    <ng-template matStepLabel>{{activity.data.name}}</ng-template>
     <form [formGroup]="firstFormGroup">
+        <h3>{{activity.data.name}}</h3>
         <step [activity]="activity"></step>
         <div>
             <button mat-button matStepperPrevious>Back</button>
