@@ -1,7 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {TemplateEditorComponent} from '../template-editor/template-editor.component';
+
+
 
 @Component({
-  selector: 'app-bid-basic-details',
+  selector: 'bid-basic-details',
   templateUrl: './bid-basic-details.component.html',
   styleUrls: ['./bid-basic-details.component.css']
 })
