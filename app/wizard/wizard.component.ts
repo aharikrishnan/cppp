@@ -16,9 +16,12 @@ export class WizardComponent implements OnInit {
 
   ngOnInit() {
     this.activities = [
+      new Activity(BidBasicDetailsComponent, {name: 'Bid Basic Details'}),
+      new Activity(BidBasicDetailsComponent, {name: 'Bid Basic Details'}),
       new Activity(BidBasicDetailsComponent, {name: 'Bid Basic Details'})
     ];
   }
+
 }
 
 

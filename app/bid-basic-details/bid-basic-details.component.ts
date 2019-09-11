@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {TemplateEditorComponent} from '../template-editor/template-editor.component';
+import {ActivityComponent} from '../activity-component';
 
 
 
@@ -8,7 +9,7 @@ import {TemplateEditorComponent} from '../template-editor/template-editor.compon
   templateUrl: './bid-basic-details.component.html',
   styleUrls: ['./bid-basic-details.component.css']
 })
-export class BidBasicDetailsComponent implements OnInit {
+export class BidBasicDetailsComponent implements ActivityComponent {
   @Input() data: any;
 
   constructor() { }
