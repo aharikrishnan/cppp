@@ -6,7 +6,7 @@ import { Activity } from '../activity';
 @Component({
   selector: 'wizard',
   templateUrl: './wizard.component.html',
-  styleUrls: ['./wizard.component.css'],
+  styleUrls: ['./wizard.component.scss'],
   encapsulation: ViewEncapsulation.Native
 })
 
@@ -19,9 +19,12 @@ export class WizardComponent implements OnInit {
 
   ngOnInit() {
     this.activities = [
-      new Activity(BidBasicDetailsComponent, {name: 'Bid Basic Details 1'}),
-      new Activity(BidBasicDetailsComponent, {name: 'Bid Basic Details 2'}),
-      new Activity(BidBasicDetailsComponent, {name: 'Bid Basic Details 3'})
+      new Activity(BidBasicDetailsComponent, {name: 'Bid Basic Details'}),
+      new Activity(BidBasicDetailsComponent, {name: 'Notice Inviting Tender'}),
+      new Activity(BidBasicDetailsComponent, {name: 'Instruction To Bidders'}),
+      new Activity(BidBasicDetailsComponent, {name: 'Bid Schedule'}),
+      new Activity(BidBasicDetailsComponent, {name: 'Pre Qualifications Criterion'}),
+      new Activity(BidBasicDetailsComponent, {name: 'Specifications'})
     ];
 
     this.firstFormGroup = this._formBuilder.group({
