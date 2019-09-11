@@ -1,7 +1,7 @@
 #wizard {
   .mat-horizontal-stepper-header-container{
     width: 300px;
-    background: #3367d6;
+    background: #2423bc;
     display: block;
     position: fixed;
     top: 0;
@@ -20,7 +20,7 @@
       
 
       &:before, &:after{
-        // display:none;
+        display:none;
       }
       
       .mat-step-icon-state-number{
@@ -33,7 +33,7 @@
         width: 30px;
         height: 30px;
           background: #6666fa;
-        border: 2px solid #2524bd;
+        border: 2px solid #2423bc;
       }
 
       .mat-step-label{
@@ -47,12 +47,18 @@
       }
     }
   }
+
   .mat-horizontal-content-container {
     padding-left: 300px;
-  }
-  .mat-dialog-actions {
-    .pull-right {
-      justify-content: flex-end;
+    step{
+      display: block;
+      min-height: 500px;
     }
-  }  
+    [matstepperprevious]{
+      float: left;
+    }
+    [matsteppernext]{
+      float: right;
+    }
+  }
 }

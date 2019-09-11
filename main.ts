@@ -14,10 +14,13 @@ import {WizardComponent} from './app/wizard/wizard.component';
 
 import {TemplateEditorComponent} from './app/template-editor/template-editor.component';
 import { RuntimeContentComponent } from './app/runtime-content/runtime-content.component';
-import { BidBasicDetailsComponent } from './app/bid-basic-details/bid-basic-details.component';
 import { StepComponent } from './app/step/step.component';
 import { StepDirective } from './app/step.directive';
 import { ApiService } from './app/api.service';
+
+
+import { BidBasicDetailsComponent } from './app/bid-basic-details/bid-basic-details.component';
+import { NoopComponent } from './app/noop/noop.component';
 
 
 
@@ -33,15 +36,17 @@ import { ApiService } from './app/api.service';
   ],
   entryComponents: [
     WizardComponent,
-    BidBasicDetailsComponent
+    BidBasicDetailsComponent,
+    NoopComponent
   ],
   declarations: [
     WizardComponent,
     TemplateEditorComponent,
     RuntimeContentComponent,
-    BidBasicDetailsComponent,
     StepComponent,
-    StepDirective
+    StepDirective,
+    BidBasicDetailsComponent,
+    NoopComponent
   ],
   bootstrap: [WizardComponent],
   providers: [ ApiService ]

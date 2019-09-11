@@ -1,1 +1,100 @@
-<template-editor></template-editor>
+<!-- <template-editor></template-editor> -->
+
+<link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+ integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+
+
+ 
+<div class="container">
+  <div class="heading">
+    <h1>{{data.name}} <i class="material-icons info">info</i></h1>
+  </div>
+  <hr>
+  <div class="body">
+    <div class="row">
+      <div class="col-md-6 text-left">
+        <span>Ministry : </span><b> {{data.workable.ministry}}</b>
+      </div>
+       <div class="col-md-6 text-right">
+        <span>Buyer Name : </span><b> {{data.workable.buyer_name}}</b>
+      </div>
+      <div class="col-md-6 text-left">
+        <span>Department : </span><b> {{data.workable.department}}</b>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-4">
+        Project Title: 
+      </div>    
+      <div class="col-md-8">
+        <mat-form-field>
+          <input type="text" [(ngModel)]="data.workable.project_title" matInput>
+        </mat-form-field>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-6">
+            Bid Classification :
+          </div>
+          <div class="col-md-6">
+            <mat-form-field>
+              <select [(ngModel)]="data.workable.bid_classification" matNativeControl required>
+                <option *ngFor="let classification of data.workable.bid_classifications" [value]="classification">{{classification}}</option>
+              </select>
+            </mat-form-field>  
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-6">
+            Bid Type : 
+          </div>
+          <div class="col-md-6">
+            <mat-form-field>
+              <select [(ngModel)]="data.workable.bid_type" matNativeControl required>
+                <option *ngFor="let type of data.workable.bid_types" [value]="type">{{type}}</option>
+              </select>
+            </mat-form-field>  
+          </div>
+        </div>
+      </div>
+    </div> 
+    <br>
+    <div class="row">
+      <div class="col-md-4">
+        Bid Duration (days) : 
+      </div>    
+      <div class="col-md-8">
+        <mat-form-field>
+          <input type="number" [min]=1 [(ngModel)]="data.workable.duration" matInput>
+        </mat-form-field>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-4">
+        Bid Value : 
+      </div>    
+      <mat-radio-group [(ngModel)]="data.workable.bid_value_type" class="col-md-8">
+        <mat-radio-button *ngFor="let type of value_types" class="col-md-6"  [value]="type">
+        {{type}}
+        </mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="row" *ngIf="data.workable.bid_value_type">
+      <div class="col-md-4">
+      </div>
+      <mat-form-field class="col-md-4">
+        <input type="number" [(ngModel)]="data.workable.bid_value_amount" disabled="{{data.workable.bid_value_type != 'absolute'}}" matInput>
+      </mat-form-field>
+      <mat-form-field class="col-md-4">
+        <input type="number" [(ngModel)]="data.workable.bid_value_percentage" disabled="{{data.workable.bid_value_type == 'absolute'}}" matInput>
+      </mat-form-field>
+    </div>
+  </div>
+</div>

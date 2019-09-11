@@ -4,6 +4,7 @@ import {ActivityComponent} from '../activity-component';
 
 
 
+
 @Component({
   selector: 'bid-basic-details',
   templateUrl: './bid-basic-details.component.html',
@@ -11,6 +12,8 @@ import {ActivityComponent} from '../activity-component';
 })
 export class BidBasicDetailsComponent implements ActivityComponent {
   @Input() data: any;
+  value_types:string[] = ['absolute', 'commision']
+
 
   constructor() { }
 

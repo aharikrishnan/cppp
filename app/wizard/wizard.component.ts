@@ -23,7 +23,7 @@ export class WizardComponent implements OnInit {
 
   ngOnInit() {
     this.activities = this.apiService.getActivities()
-
+    console.log("this.activities", this.activities)
     this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ['', Validators.required]
     });
