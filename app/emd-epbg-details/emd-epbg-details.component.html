@@ -1,0 +1,113 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>
+      <h2>{{data.name}} <i class="material-icons info" matTooltip="EMD / EPBG Details Collection">info</i></h2>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <div class="emd">
+      <h4><b> EMD Details </b></h4>
+      <mat-grid-list cols="3" rowHeight="60px">
+        <mat-grid-tile >
+          <div class="tile-content-left">
+            EMD Type : 
+          </div>
+        </mat-grid-tile>
+        <mat-radio-group [(ngModel)]="data.workable.emd_type">
+          <mat-grid-tile *ngFor="let type of types">
+            <div class="tile-content-left">
+              <mat-radio-button [value]="type">
+              {{type}}
+              </mat-radio-button>
+            </div>
+          </mat-grid-tile>    
+        </mat-radio-group>
+        <mat-grid-tile>
+        </mat-grid-tile>
+        <mat-grid-tile *ngIf="data.workable.emd_type">
+          <div class="tile-content-left">
+            <mat-form-field>
+              <input type="number" [(ngModel)]="data.workable.emd_amount" disabled="{{data.workable.emd_type != 'absolute'}}" matInput>
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile *ngIf="data.workable.emd_type">
+          <div class="tile-content-left">
+            <mat-form-field>
+              <input type="number" [(ngModel)]="data.workable.emd_percentage" disabled="{{data.workable.emd_type == 'absolute'}}" matInput>
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <mat-grid-list cols="3" rowHeight="60px">
+        <mat-grid-tile>
+          <div class="tile-content-left">
+            EMD Advisory Bank : 
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <div class="tile-content-left">
+            <mat-form-field>
+              <select [(ngModel)]="data.workable.emd_bank" matNativeControl required>
+                <option *ngFor="let bank of banks" [value]="bank">{{bank}}</option>
+              </select>
+            </mat-form-field>  
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>  
+    </div>
+    <div class="epbg">
+      <mat-divider></mat-divider>
+      <h4><b> EPBG Details </b></h4>
+      <mat-grid-list cols="3" rowHeight="60px">
+        <mat-grid-tile >
+          <div class="tile-content-left">
+            EPBG Type : 
+          </div>
+        </mat-grid-tile>
+        <mat-radio-group [(ngModel)]="data.workable.epbg_type">
+          <mat-grid-tile *ngFor="let type of types">
+            <div class="tile-content-left">
+              <mat-radio-button [value]="type">
+              {{type}}
+              </mat-radio-button>
+            </div>
+          </mat-grid-tile>    
+        </mat-radio-group>
+        <mat-grid-tile>
+        </mat-grid-tile>
+        <mat-grid-tile *ngIf="data.workable.epbg_type">
+          <div class="tile-content-left">
+            <mat-form-field>
+              <input type="number" [(ngModel)]="data.workable.epbg_amount" disabled="{{data.workable.epbg_type != 'absolute'}}" matInput>
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile *ngIf="data.workable.epbg_type">
+          <div class="tile-content-left">
+            <mat-form-field>
+              <input type="number" [(ngModel)]="data.workable.epbg_percentage" disabled="{{data.workable.epbg_type == 'absolute'}}" matInput>
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <mat-grid-list cols="3" rowHeight="60px">
+        <mat-grid-tile>
+          <div class="tile-content-left">
+            EPBG Advisory Bank : 
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <div class="tile-content-left">
+            <mat-form-field>
+              <select [(ngModel)]="data.workable.epbg_bank" matNativeControl required>
+                <option *ngFor="let bank of banks" [value]="bank">{{bank}}</option>
+              </select>
+            </mat-form-field>  
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>  
+    </div>
+  </mat-card-content> 
+</mat-card>

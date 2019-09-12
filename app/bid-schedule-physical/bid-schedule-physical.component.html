@@ -1,0 +1,108 @@
+<div>
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>
+        <h2>{{data.name}} <i class="material-icons info" matTooltip="Advanced Tender Details">info</i></h2>
+      </mat-card-title>
+    </mat-card-header>
+  <mat-divider></mat-divider>
+    <mat-card-content>
+      <div>
+        <mat-grid-list cols="4" rowHeight="60px">
+          <mat-grid-tile [colspan]="4">
+            <div class="tile-content-left">
+              <span>Project Title : </span><span> {{data.workable.project_title}}</span>
+            </div>
+          </mat-grid-tile>
+        </mat-grid-list>
+        <mat-divider></mat-divider>
+        <mat-grid-list cols="4" rowHeight="60px">
+          <mat-grid-tile>
+            <div class="tile-content-left">
+              Pre Bid Meeting : 
+            </div>
+          </mat-grid-tile>
+          <mat-radio-group [(ngModel)]="data.workable.bid_meeting_type">
+            <mat-grid-tile *ngFor="let type of meeting_types">
+              <div class="tile-content-left">
+                <mat-radio-button [value]="type">
+                {{type}}
+                </mat-radio-button>
+              </div>
+            </mat-grid-tile>    
+          </mat-radio-group>
+        </mat-grid-list>
+        <mat-divider></mat-divider>
+      </div>
+      <div class="pre-bid-meeting-details" *ngIf="data.workable.bid_meeting_type == 'Physical'">
+        <mat-grid-list cols="4" rowHeight="60px">
+          <mat-grid-tile>
+            <div class="tile-content-left">
+              Meeting Date & Time : 
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field>
+              <input matInput type="datetime-local" [(ngModel)]="data.workable.meeting_details_date">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile [colspan]="2" [rowspan]="5">
+            <div>
+              <span>Pre Bid Meeting Agenda : </span><br>
+              <mat-form-field>
+                <textarea matInput rows="5" [(ngModel)]="data.workable.meeting_details_agenda1">
+                </textarea>
+              </mat-form-field>
+              <br>
+              OR
+              <button (click)="fileInput.click()">
+                <span>Upload Pre Bid Meeting Agenda</span>
+                <input #fileInput type="file" [(ngModel)]="data.workable.meeting_details_agenda2" style="display:none;" />
+              </button>
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div class="tile-content-left">
+              Pincode : 
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field>
+              <input matInput type="number" [(ngModel)]="data.workable.meeting_details_pincode">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div class="tile-content-left">
+              City : 
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field>
+              <input matInput type="text" [(ngModel)]="data.workable.meeting_details_city">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div class="tile-content-left">
+              State : 
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field>
+              <input matInput type="text" [(ngModel)]="data.workable.meeting_details_state">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div class="tile-content-left">
+              Full Address : 
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field>
+              <input matInput type="text" [(ngModel)]="data.workable.meeting_details_address">
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

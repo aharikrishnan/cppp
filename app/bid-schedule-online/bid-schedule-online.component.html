@@ -1,0 +1,69 @@
+<div>
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>
+        <h2>{{data.name}} <i class="material-icons info" matTooltip="Advanced Tender Details">info</i></h2>
+      </mat-card-title>
+    </mat-card-header>
+  <mat-divider></mat-divider>
+    <mat-card-content>
+      <div>
+        <mat-grid-list cols="4" rowHeight="60px">
+          <mat-grid-tile [colspan]="4">
+            <div class="tile-content-left">
+              <span>Project Title : </span><span> {{data.workable.project_title}}</span>
+            </div>
+          </mat-grid-tile>
+        </mat-grid-list>
+        <mat-divider></mat-divider>
+        <mat-grid-list cols="4" rowHeight="60px">
+          <mat-grid-tile>
+            <div class="tile-content-left">
+              Pre Bid Meeting : 
+            </div>
+          </mat-grid-tile>
+          <mat-radio-group [(ngModel)]="data.workable.bid_meeting_type">
+            <mat-grid-tile *ngFor="let type of meeting_types">
+              <div class="tile-content-left">
+                <mat-radio-button [value]="type">
+                {{type}}
+                </mat-radio-button>
+              </div>
+            </mat-grid-tile>    
+          </mat-radio-group>
+        </mat-grid-list>
+        <mat-divider></mat-divider>
+      </div>
+      <div class="pre-bid-meeting-details" *ngIf="data.workable.bid_meeting_type == 'Video Conference'">
+        <mat-grid-list cols="12">
+          <mat-grid-tile [colspan]="4">
+            <div class="tile-content-left">
+              Meeting Date & Time : 
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile [colspan]="8">
+            <div class="tile-content-left">
+              <mat-form-field>
+                <input matInput type="datetime-local" [(ngModel)]="data.workable.online_meeting_date"><i matSuffix class="material-icons"> calendar_today</i>
+              </mat-form-field>
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile [colspan]="4">
+            <div class="tile-content-left">
+              Video Conference Details : 
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile [colspan]="8">
+            <div class="tile-content-left">
+              <mat-form-field >
+                <textarea matInput rows="5" [(ngModel)]="data.workable.online_meeting_details" ></textarea>
+              </mat-form-field>
+              
+            </div>
+          </mat-grid-tile>
+
+        </mat-grid-list>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

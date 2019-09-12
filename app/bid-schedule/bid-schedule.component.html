@@ -1,0 +1,16 @@
+<mat-horizontal-stepper #stepper id="bid-schedule" labelPosition="bottom">
+  <mat-step [stepControl]="firstFormGroup" *ngFor="let activity of activities;let i = index">
+    <ng-template matStepLabel>{{activity.data.name}}</ng-template>
+    <form [formGroup]="firstFormGroup">
+        <h3>{{activity.data.name}}</h3>
+        <step [activity]="activity"></step>
+        <div>
+          <button mat-button matStepperPrevious *ngIf="i!=0">Back</button>
+          <button mat-button matStepperNext class="pull-right" *ngIf="i!=(activities.length-1)">Next</button>
+        </div>
+    </form>
+  </mat-step>
+  <ng-template matStepperIcon="number">
+    <mat-icon>done_outline</mat-icon>
+  </ng-template>
+</mat-horizontal-stepper>
