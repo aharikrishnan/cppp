@@ -1,0 +1,21 @@
+h1 {
+  font-weight: bold; 
+  color: black;
+}
+hr {
+width: auto;
+height: 2px;
+background-color:#888;
+opacity: 0.5;
+border: #eee;
+}
+.material-icons {
+  color: blue;
+}
+button:hover {
+  background-color: #f77f00;
+}
+.content {
+  padding: 10px;
+}
+

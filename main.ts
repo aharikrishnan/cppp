@@ -20,6 +20,9 @@ import { ApiService } from './app/api.service';
 
 
 import { BidBasicDetailsComponent } from './app/bid-basic-details/bid-basic-details.component';
+
+import { ChooseTemplateComponent } from './app/choose-template/choose-template.component';
+
 import { NoopComponent } from './app/noop/noop.component';
 
 
@@ -37,6 +40,7 @@ import { NoopComponent } from './app/noop/noop.component';
   entryComponents: [
     WizardComponent,
     BidBasicDetailsComponent,
+    ChooseTemplateComponent,
     NoopComponent
   ],
   declarations: [
@@ -46,7 +50,8 @@ import { NoopComponent } from './app/noop/noop.component';
     StepComponent,
     StepDirective,
     BidBasicDetailsComponent,
-    NoopComponent
+    NoopComponent,
+    ChooseTemplateComponent
   ],
   bootstrap: [WizardComponent],
   providers: [ ApiService ]
