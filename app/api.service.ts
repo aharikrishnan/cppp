@@ -14,7 +14,7 @@ export class ApiService {
   constructor() { }
 
 
-  getData(){
+  getTemplateInfo(){
     return {
       "id": "TPL123",
       "name": "National Highway Bid Template #1",
