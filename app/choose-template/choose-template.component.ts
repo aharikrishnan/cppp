@@ -1,12 +1,17 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { ApiService }         from '../api.service';
 import {ActivityComponent} from '../activity-component';
+import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
 
 @Component({
   selector: 'app-choose-template',
   templateUrl: './choose-template.component.html',
-  styleUrls: ['./choose-template.component.scss']
+  styleUrls: ['./choose-template.component.scss'],
+  // encapsulation: ViewEncapsulation.None,
+  // providers: [{
+  //   provide: STEPPER_GLOBAL_OPTIONS, useValue: {displayDefaultIndicatorType: false}
+  // }]
 })
 export class ChooseTemplateComponent implements ActivityComponent {
   @Input() data: any;
