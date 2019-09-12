@@ -6,7 +6,7 @@ import {ActivityComponent} from '../activity-component';
 @Component({
   selector: 'app-choose-template',
   templateUrl: './choose-template.component.html',
-  styleUrls: ['./choose-template.component.css']
+  styleUrls: ['./choose-template.component.scss']
 })
 export class ChooseTemplateComponent implements ActivityComponent {
   @Input() data: any;
@@ -139,9 +139,9 @@ export class ChooseTemplateComponent implements ActivityComponent {
 
 
     }
-    let templates = Array.from(Array(7)).map((_, i) => {
+    let templates = Array.from(Array(9)).map((_, i) => {
       let t = Object.assign({}, tpl)
-      t.name = t.name + " - " + (i+1)
+      t.name = t.name + " # " + (i+1)
       return t
     })
     return templates

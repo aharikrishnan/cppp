@@ -19,3 +19,18 @@ button:hover {
   padding: 10px;
 }
 
+.mat-card-image {
+    width: 100px;
+    display: block;
+    margin: auto;
+}
+carousel{
+.carousel-indicators ng-star-inserted{
+  display: none; 
+}
+slide {
+mat-card{
+ background-color: #efefef;
+}
+}
+}
