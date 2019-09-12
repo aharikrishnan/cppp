@@ -1,5 +1,5 @@
 #wizard {
-  .mat-horizontal-stepper-header-container{
+  &> .mat-horizontal-stepper-header-container{
     width: 300px;
     background: #2423bc;
     display: block;
