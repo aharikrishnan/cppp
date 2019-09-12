@@ -48,7 +48,7 @@
     }
   }
 
-  .mat-horizontal-content-container {
+  &> .mat-horizontal-content-container {
     padding-left: 300px;
     step{
       display: block;

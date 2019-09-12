@@ -27,7 +27,10 @@ import { BidBasicDetailsComponent } from './app/bid-basic-details/bid-basic-deta
 import { ChooseTemplateComponent } from './app/choose-template/choose-template.component';
 
 import { NoopComponent } from './app/noop/noop.component';
-
+import { BidScheduleComponent } from './app/bid-schedule/bid-schedule.component';
+import { EmdEpbgDetailsComponent } from './app/emd-epbg-details/emd-epbg-details.component';
+import { BidSchedulePhysicalComponent } from './app/bid-schedule-physical/bid-schedule-physical.component';
+import { BidScheduleOnlineComponent } from './app/bid-schedule-online/bid-schedule-online.component';
 
 
 @NgModule({
@@ -45,7 +48,11 @@ import { NoopComponent } from './app/noop/noop.component';
     WizardComponent,
     BidBasicDetailsComponent,
     ChooseTemplateComponent,
-    NoopComponent
+    NoopComponent,
+    EmdEpbgDetailsComponent,
+    BidSchedulePhysicalComponent,
+    BidScheduleOnlineComponent,
+    BidScheduleComponent,
   ],
   declarations: [
     WizardComponent,
@@ -55,7 +62,11 @@ import { NoopComponent } from './app/noop/noop.component';
     StepDirective,
     BidBasicDetailsComponent,
     NoopComponent,
-    ChooseTemplateComponent
+    ChooseTemplateComponent,
+    EmdEpbgDetailsComponent,
+    BidSchedulePhysicalComponent,
+    BidScheduleOnlineComponent,
+    BidScheduleComponent,
   ],
   bootstrap: [WizardComponent],
   providers: [ ApiService ]

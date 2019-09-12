@@ -103,6 +103,37 @@
           </mat-grid-tile>
         </mat-grid-list>
       </div>
+     <div class="pre-bid-meeting-details" *ngIf="data.workable.bid_meeting_type == 'Video Conference'">
+        <mat-grid-list cols="12">
+          <mat-grid-tile [colspan]="4">
+            <div class="tile-content-left">
+              Meeting Date & Time : 
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile [colspan]="8">
+            <div class="tile-content-left">
+              <mat-form-field>
+                <input matInput type="datetime-local" [(ngModel)]="data.workable.online_meeting_date"><i matSuffix class="material-icons"> calendar_today</i>
+              </mat-form-field>
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile [colspan]="4">
+            <div class="tile-content-left">
+              Video Conference Details : 
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile [colspan]="8">
+            <div class="tile-content-left">
+              <mat-form-field >
+                <textarea matInput rows="5" [(ngModel)]="data.workable.online_meeting_details" ></textarea>
+              </mat-form-field>
+              
+            </div>
+          </mat-grid-tile>
+
+        </mat-grid-list>
+      </div>
+
     </mat-card-content>
   </mat-card>
 </div>

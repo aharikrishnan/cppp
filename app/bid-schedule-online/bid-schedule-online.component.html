@@ -34,6 +34,76 @@
         </mat-grid-list>
         <mat-divider></mat-divider>
       </div>
+      <div class="pre-bid-meeting-details" *ngIf="data.workable.bid_meeting_type == 'Physical'">
+        <mat-grid-list cols="4" rowHeight="60px">
+          <mat-grid-tile>
+            <div class="tile-content-left">
+              Meeting Date & Time : 
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field>
+              <input matInput type="datetime-local" [(ngModel)]="data.workable.meeting_details_date">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile [colspan]="2" [rowspan]="5">
+            <div>
+              <span>Pre Bid Meeting Agenda : </span><br>
+              <mat-form-field>
+                <textarea matInput rows="5" [(ngModel)]="data.workable.meeting_details_agenda1">
+                </textarea>
+              </mat-form-field>
+              <br>
+              OR
+              <button (click)="fileInput.click()">
+                <span>Upload Pre Bid Meeting Agenda</span>
+                <input #fileInput type="file" [(ngModel)]="data.workable.meeting_details_agenda2" style="display:none;" />
+              </button>
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div class="tile-content-left">
+              Pincode : 
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field>
+              <input matInput type="number" [(ngModel)]="data.workable.meeting_details_pincode">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div class="tile-content-left">
+              City : 
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field>
+              <input matInput type="text" [(ngModel)]="data.workable.meeting_details_city">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div class="tile-content-left">
+              State : 
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field>
+              <input matInput type="text" [(ngModel)]="data.workable.meeting_details_state">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div class="tile-content-left">
+              Full Address : 
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field>
+              <input matInput type="text" [(ngModel)]="data.workable.meeting_details_address">
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+
       <div class="pre-bid-meeting-details" *ngIf="data.workable.bid_meeting_type == 'Video Conference'">
         <mat-grid-list cols="12">
           <mat-grid-tile [colspan]="4">
