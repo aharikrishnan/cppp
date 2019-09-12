@@ -9,6 +9,9 @@ import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {DemoMaterialModule} from './material-module';
 
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+
+
 // import {StepperLabelPositionBottomExample} from './app/stepper-label-position-bottom-example';
 import {WizardComponent} from './app/wizard/wizard.component';
 
@@ -35,7 +38,8 @@ import { NoopComponent } from './app/noop/noop.component';
     HttpClientModule,
     DemoMaterialModule,
     MatNativeDateModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CarouselModule.forRoot()
   ],
   entryComponents: [
     WizardComponent,

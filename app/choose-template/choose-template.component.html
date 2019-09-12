@@ -12,17 +12,21 @@
       <button class="mat-raised-button mat-button-base"> Build your own</button>
     </div>
 
-<carousel [itemsPerSlide]="itemsPerSlide"
-          [singleSlideOffset]="singleSlideOffset"
-          [noWrap]="!noWrap"
-          [interval]="false"
-          [startFromIndex]="5"
-          (slideRangeChange)="onSlideRangeChange($event)">
-  <slide *ngFor="let slide of slides; let index=index">
-    <img [src]="slide.image" alt="image slide" style="display: block; width: 100%;">
-    <div class="carousel-caption">
-      <h4>Slide {{index}}</h4>
-    </div>
+<carousel [itemsPerSlide]="itemsPerSlide">
+  <slide *ngFor="let template of templates; let index=index">
+
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <!-- <pre>{{template|json}}</pre> -->
+        <mat-card-title>{{template.name}} </mat-card-title>
+        <mat-card-subtitle>{{template.category}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+      <img mat-card-image src="https://bab-assets1.babapi.ooo/img/html_widget_images/8437262/28ba56ca5684a_doctemplate.png.999x200x.png"
+      width="200" alt="Bid Template">
+      </mat-card-content>
+    </mat-card>
   </slide>
 </carousel>
  

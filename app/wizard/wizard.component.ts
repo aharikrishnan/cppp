@@ -23,6 +23,7 @@ export class WizardComponent implements OnInit {
 
   ngOnInit() {
     this.apiService.getActivities().then(results => {
+      console.log(results)
       this.activities = results
     })
     this.firstFormGroup = this._formBuilder.group({
