@@ -153,11 +153,11 @@ export class ApiService {
       new Activity(NoopComponent, {name: 'Pre Qualifications Criterion',workable: this.getWorkable()}),
       new Activity(NoopComponent, {name: 'Specifications',workable: this.getWorkable()})
     ];
-    
-    return new Promise((resolve, reject) => { 
+
+    let promise =  new Promise((resolve, reject) => { 
         resolve(activities);
     })
-
+    return promise
     
   }
 }
