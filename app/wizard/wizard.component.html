@@ -3,9 +3,13 @@
     <ng-template matStepLabel>{{activity.data.name}}</ng-template>
     <form [formGroup]="firstFormGroup">
         <step [activity]="activity"></step>
-        <div>
-          <button mat-button matStepperPrevious mat-raised-button color="primary" [disabled]="i==0">Back</button>
-          <button mat-button matStepperNext mat-raised-button color="primary" [disabled]="i==(activities.length-1)">Next</button>
+        <div class="nav-actions">
+          <button mat-button matStepperPrevious mat-raised-button color="primary" [disabled]="i==0">
+                <mat-icon class="mr-2">arrow_back</mat-icon>Back
+            </button>
+          <button mat-button matStepperNext mat-raised-button color="primary" [disabled]="i==(activities.length-1)">
+                Next<mat-icon class="ml-2">arrow_forward</mat-icon>
+          </button>
         </div>
     </form>
   </mat-step>

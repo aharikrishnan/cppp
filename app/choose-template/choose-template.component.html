@@ -1,4 +1,4 @@
-<mat-card class="example-card">
+<mat-card class="choose-template-card">
 	<mat-card-header>
 		<mat-card-title>
 			<h2>{{data.name}} <i class="material-icons info">info</i></h2>
@@ -6,18 +6,21 @@
   </mat-card-header>
 <mat-divider></mat-divider>
   <mat-card-content>
-    <div class="content">
-      <button class="mat-raised-button mat-button-base"> Choose Template </button>
-      OR
-      <button class="mat-raised-button mat-button-base"> Build your own</button>
-    </div>
 
+  <div class="template-action-container bg-white">
+    <div class="row justify-content-md-center">
+      <div class="col col-md-6">
+        <button type="button" class="btn btn-raised btn-primary">Choose Template</button>
+        <span class="pl-3 pr-3">OR</span>
+        <button type="button" class="btn btn-raised btn-secondary">Build your own</button>
+      </div>
+    </div>
+  </div>
+<mat-divider></mat-divider>
 <carousel [itemsPerSlide]="itemsPerSlide" [interval]="false" [noWrap]="false">
   <slide *ngFor="let template of templates; let index=index">
-    <mat-card class="example-card">
+    <mat-card class="template-card">
       <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <!-- <pre>{{template|json}}</pre> -->
         <mat-card-title>{{template.name}} </mat-card-title>
         <mat-card-subtitle>{{template.category}}</mat-card-subtitle>
       </mat-card-header>
