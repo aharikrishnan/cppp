@@ -16,6 +16,7 @@ import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
 export class ChooseTemplateComponent implements ActivityComponent {
   @Input() data: any;
 
+  showTemplates = false
   itemsPerSlide = 3;
  
   templates=[]
@@ -24,7 +25,10 @@ export class ChooseTemplateComponent implements ActivityComponent {
 
   ngOnInit() {
     this.templates = this.getTemplateInfo()
-    console.log(this.templates)
+  }
+
+  toggleTemplate(){
+    this.showTemplates = true
   }
 
   getTemplateInfo(){
